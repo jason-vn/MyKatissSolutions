@@ -1,24 +1,25 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Greetings {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        ArrayList<Character> list = new ArrayList<>();
+	// Input: heeeey
+	// Output: heeeeeeeey (double amount of e's)
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		StringBuilder out = new StringBuilder();
 
-        for(int i = 0; i < s.length(); i++) {
-            if(s.charAt(i) == 'e') {
-                list.add(s.charAt(i));
-                list.add(s.charAt(i));
-            } else {
-                list.add(s.charAt(i));
-            }
-        }
+		// Building string by iterating through string characters
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == 'e') {	 // Insert character twice if 'e'
+				out.append(s.charAt(i));
+				out.append(s.charAt(i));
+			} else {
+				out.append(s.charAt(i));
+			}
+		}
 
-        for(int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i));
-        }
+		System.out.println(out);
+		sc.close();
 
-    }
+	}
 }
